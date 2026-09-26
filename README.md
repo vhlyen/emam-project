@@ -1,6 +1,10 @@
 # Yêu Vải Vụn 🐾
 
-Yêu Vải Vụn is a community project that promotes recycling old fabric into useful products, especially beds for rescued dogs. The project aims to encourage people to donate unused fabric and connect them with rescue stations.
+Yêu Vải Vụn is a community project that promotes recycling old fabric into useful products, especially beds for rescued dogs.
+
+The project aims to encourage people to donate unused fabric, reduce textile waste, and connect the community with animal rescue stations.
+
+---
 
 ## 📌 Project Overview
 
@@ -13,6 +17,30 @@ The website provides:
 - Tutorial videos.
 - A contact form for visitors to send messages.
 - Contact messages stored in Google Sheets.
+
+---
+
+## 🛠️ Technologies
+
+### Frontend
+
+- HTML5
+- CSS3
+- JavaScript
+
+### Backend / Data
+
+- Node.js
+- Express.js
+- Google Apps Script
+- Google Sheets
+
+### Deployment
+
+- GitHub Pages for the website
+- Google Apps Script for the online contact form
+
+---
 
 ## 🗂️ Project Structure
 
