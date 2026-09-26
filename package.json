@@ -1,0 +1,17 @@
+{
+  "name": "em-am-community-project",
+  "version": "1.0.0",
+  "description": "```text yeu-vai-vun/ ├── index.html ├── css/ │   └── styles.css └── js/     ├── data.js     ├── stations.js     ├── modal.js     ├── navigation.js     ├── contact.js     ├── animations.js     └── app.js ```",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "dotenv": "^18.0.4",
+    "express": "^5.2.1"
+  }
+}
