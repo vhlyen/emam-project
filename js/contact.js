@@ -1,15 +1,26 @@
 const contactForm = document.getElementById("contactForm");
 const formSuccess = document.getElementById("formSuccess");
 
+// Google Apps Script Web App URL
+const GOOGLE_SHEET_URL =
+  "https://script.google.com/macros/s/AKfycbyaVYywywj-2JgKp9j4rekT4H_yDPyTx2UxkPnn7Pbg15ROpKu4yMMz_13cwzJMt1xv/exec";
+
+
 contactForm.addEventListener("submit", async (event) => {
   event.preventDefault();
 
-  // Kiểm tra HTML validation trước
+  // =========================
+  // KIỂM TRA FORM
+  // =========================
+
   if (!contactForm.reportValidity()) {
     return;
   }
 
-  // Lấy dữ liệu từ form
+  // =========================
+  // LẤY DỮ LIỆU
+  // =========================
+
   const data = {
     name: document.getElementById("cf-name").value.trim(),
     email: document.getElementById("cf-email").value.trim(),
@@ -28,46 +39,107 @@ contactForm.addEventListener("submit", async (event) => {
     submitButton.disabled = true;
     submitButton.textContent = "Đang gửi...";
 
-    // Gửi dữ liệu tới Express
-    const response = await fetch("/api/contact", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(data)
-    });
 
-    const result = await response.json();
+    // =========================
+    // TẠO FORM ẨN
+    // =========================
 
-    // Nếu backend trả lỗi
-    if (!response.ok) {
-      throw new Error(result.message || "Có lỗi xảy ra.");
+    const hiddenForm = document.createElement("form");
+
+    hiddenForm.method = "POST";
+    hiddenForm.action = GOOGLE_SHEET_URL;
+    hiddenForm.target = "googleSheetFrame";
+    hiddenForm.style.display = "none";
+
+
+    // Name
+    const nameInput = document.createElement("input");
+    nameInput.type = "hidden";
+    nameInput.name = "name";
+    nameInput.value = data.name;
+
+
+    // Email
+    const emailInput = document.createElement("input");
+    emailInput.type = "hidden";
+    emailInput.name = "email";
+    emailInput.value = data.email;
+
+
+    // Message
+    const messageInput = document.createElement("input");
+    messageInput.type = "hidden";
+    messageInput.name = "message";
+    messageInput.value = data.message;
+
+
+    // Thêm dữ liệu vào form
+    hiddenForm.appendChild(nameInput);
+    hiddenForm.appendChild(emailInput);
+    hiddenForm.appendChild(messageInput);
+
+
+    // Thêm form vào website
+    document.body.appendChild(hiddenForm);
+
+
+    // =========================
+    // TẠO IFRAME ẨN
+    // =========================
+
+    let iframe = document.getElementById("googleSheetFrame");
+
+    if (!iframe) {
+      iframe = document.createElement("iframe");
+
+      iframe.id = "googleSheetFrame";
+      iframe.name = "googleSheetFrame";
+
+      iframe.style.display = "none";
+
+      document.body.appendChild(iframe);
     }
 
+
     // =========================
-    // GỬI THÀNH CÔNG
+    // GỬI FORM
     // =========================
 
-    console.log("SERVER RESPONSE:", result);
+    hiddenForm.submit();
 
-    // Xóa form
+
+    // Chờ một chút để Google Apps Script xử lý
+    await new Promise((resolve) => {
+      setTimeout(resolve, 1500);
+    });
+
+
+    // =========================
+    // THÀNH CÔNG
+    // =========================
+
     contactForm.reset();
 
-    // Hiện thông báo
     formSuccess.textContent =
       "🎉 Cảm ơn bạn! Lời nhắn đã được gửi thành công 🐾";
 
     formSuccess.classList.add("show");
+
+
+    // Xóa form tạm
+    hiddenForm.remove();
+
 
     // Ẩn thông báo sau 4 giây
     setTimeout(() => {
       formSuccess.classList.remove("show");
     }, 4000);
 
+
   } catch (error) {
 
     // =========================
-    // GỬI THẤT BẠI
+    // LỖI
     // =========================
 
     console.error("Contact form error:", error);
@@ -79,7 +151,10 @@ contactForm.addEventListener("submit", async (event) => {
 
   } finally {
 
-    // Cho phép bấm lại button
+    // =========================
+    // ENABLE BUTTON
+    // =========================
+
     submitButton.disabled = false;
     submitButton.textContent = "🦴 Gửi lời nhắn";
   }
