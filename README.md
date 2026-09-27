@@ -1,6 +1,6 @@
 # Em Ấm Community Project 🐾
 
-Em Ấm is a community project that promotes recycling old fabric into useful products, especially beds for rescued dogs.
+Em Ấm is a community project that promotes recycling old fabric into useful products, especially beds for rescued dogs and cats.
 
 The project aims to encourage people to donate unused fabric, reduce textile waste, and connect the community with animal rescue stations.
 
