@@ -42,5 +42,5 @@ const stations = [
 const videoLinks = {
   "Vải Cotton": "",
   "Vải Denim / Jeans": "",
-  "Len / Áo khoác cũ": ""
+  "Len / Áo khoác cũ": "https://www.tiktok.com/@shopping.for.boss/video/7323175058044718338"
 };
