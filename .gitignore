@@ -17,3 +17,6 @@ npm-debug.log*
 
 # VS Code
 .vscode/
+
+# images and video
+images/

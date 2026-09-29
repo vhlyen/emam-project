@@ -42,5 +42,5 @@ const stations = [
 const videoLinks = {
   "Vải Cotton": "",
   "Vải Denim / Jeans": "",
-  "Len / Áo khoác cũ": "https://drive.google.com/file/d/1fMhkLIq9tEADDT-Bw0nY_3JOXVHR18T/preview"
+  "Len / Áo khoác cũ": "images/guide_len.mp4"
 };
