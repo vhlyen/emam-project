@@ -7,7 +7,7 @@ const stations = [
     city: "TP.HCM",
     address: "12 Nguyễn Văn Cừ, Q.5, TP.HCM",
     phone: "090 123 4567",
-    mapUrl: "https://maps.google.com"
+    mapUrl: "https://maps.app.goo.gl/5GWQ9ZudPUPjbihg8"
   },
   {
     name: "Mái Ấm Thú Cưng Thủ Đức",
