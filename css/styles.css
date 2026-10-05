@@ -126,23 +126,6 @@ footer{background:var(--peach);padding:36px 0;margin-top:40px}
 .footer-social a{width:42px;height:42px;border-radius:50%;background:var(--white);display:flex;align-items:center;justify-content:center;font-size:19px;box-shadow:var(--shadow-soft);transition:transform .2s ease}
 .footer-social a:hover{transform:translateY(-4px) scale(1.1)}
 footer p{font-size:13.5px;color:var(--brown-soft)}
-
-@media(max-width:900px){.guide-grid{grid-template-columns:1fr}}
-@media(max-width:800px){.contact-wrap{grid-template-columns:1fr}}
-@media(max-width:768px){
-  nav ul{position:absolute;top:100%;left:0;right:0;flex-direction:column;background:var(--cream);padding:12px 24px 20px;gap:4px;border-bottom:2px solid var(--peach);display:none}
-  nav ul.open{display:flex}
-  .burger{display:block}
-  .about-grid{grid-template-columns:1fr}
-  .about-img{order:-1;height:220px}
-}
-@media(max-width:700px){.station-grid{grid-template-columns:1fr}}
-
-@media(prefers-reduced-motion:no-preference){
-  .fade-up{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
-  .fade-up.in{opacity:1;transform:translateY(0)}
-}
-
 .why-herizon {
   padding: 70px 8%;
   background-color: #fff9ec;
@@ -216,3 +199,19 @@ footer p{font-size:13.5px;color:var(--brown-soft)}
   font-weight: 700;
   line-height: 1.6;
 }
+@media(max-width:900px){.guide-grid{grid-template-columns:1fr}}
+@media(max-width:800px){.contact-wrap{grid-template-columns:1fr}}
+@media(max-width:768px){
+  nav ul{position:absolute;top:100%;left:0;right:0;flex-direction:column;background:var(--cream);padding:12px 24px 20px;gap:4px;border-bottom:2px solid var(--peach);display:none}
+  nav ul.open{display:flex}
+  .burger{display:block}
+  .about-grid{grid-template-columns:1fr}
+  .about-img{order:-1;height:220px}
+}
+@media(max-width:700px){.station-grid{grid-template-columns:1fr}}
+
+@media(prefers-reduced-motion:no-preference){
+  .fade-up{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+  .fade-up.in{opacity:1;transform:translateY(0)}
+}
+
