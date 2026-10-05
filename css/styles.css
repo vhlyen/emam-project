@@ -142,3 +142,77 @@ footer p{font-size:13.5px;color:var(--brown-soft)}
   .fade-up{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
   .fade-up.in{opacity:1;transform:translateY(0)}
 }
+
+.why-herizon {
+  padding: 70px 8%;
+  background-color: #fff9ec;
+}
+
+.why-container {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 60px;
+
+  align-items: center;
+}
+
+/* Vòng tròn bên trái */
+.why-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.why-circle {
+  width: 180px;
+  height: 180px;
+
+  background-color: #b8ead9;
+
+  border: 7px solid white;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 55px;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Nội dung */
+.why-content h2 {
+  color: #ff8065;
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.why-content h3 {
+  color: #6d4b3e;
+  font-size: 24px;
+  margin-bottom: 25px;
+}
+
+.why-content p {
+  color: #805f4f;
+  font-size: 19px;
+  line-height: 1.8;
+  margin-bottom: 18px;
+}
+
+/* Quote */
+.why-content blockquote {
+  margin: 20px 0;
+  padding: 15px 20px;
+
+  border-left: 5px solid #ff8065;
+
+  color: #765243;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.6;
+}
